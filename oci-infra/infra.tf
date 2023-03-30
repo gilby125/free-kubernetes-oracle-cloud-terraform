@@ -188,7 +188,7 @@ locals {
 data "oci_core_images" "latest_image" {
   compartment_id = var.compartment_id
   operating_system = "Oracle Linux"
-  operating_system_version = "7.9"
+  operating_system_version = "9.1"
   filter {
     name   = "display_name"
     values = ["^.*aarch64-.*$"]
@@ -199,7 +199,7 @@ data "oci_core_images" "latest_image" {
 resource "oci_containerengine_node_pool" "k8s_node_pool" {
   cluster_id         = oci_containerengine_cluster.k8s_cluster.id
   compartment_id     = var.compartment_id
-  kubernetes_version = "v1.21.5"
+  kubernetes_version = "v1.26.3"
   name               = "free-k8s-node-pool"
   node_config_details {
     dynamic placement_configs {
