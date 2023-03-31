@@ -188,7 +188,7 @@ locals {
 data "oci_core_images" "latest_image" {
   compartment_id = var.compartment_id
   operating_system = "Oracle Linux"
-  operating_system_version = "9.1"
+  operating_system_version = "9"
   filter {
     name   = "display_name"
     values = ["^.*aarch64-.*$"]
